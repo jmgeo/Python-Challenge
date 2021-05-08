@@ -4,14 +4,14 @@ import csv
 
 #define needed variables to perform the homework
 months = []
-P&L = []
+PnL = []
 
 #set the needed counts equal to zero to start
 total_months = 0
 total_PnL = 0
-average_change_PnL = 0
-greatest_inc_P = 0
-greatest_dec_L = 0
+last_month_PnL = 0
+this_month_PnL = 0
+PnL_change = 0
 
 #change the directory to the file location
 csvpath = os.path.join("Resources", "budget_data.csv")
@@ -22,16 +22,10 @@ with open(csvpath) as csvfile:
     csvheader = next(csvreader)
     print(f"CSV Header: {csvheader}")
 
-#the number of months in the spreadsheet is simply equal to the number of rows not including the header
-    #months = len(list(csvreader))
-    #print (months)
+    for row in csvreader:
+        #count the total number of months
+        total_months +=1
 
-#the total of the Profits and Losses is equal to the sum of all the values in the second column of the csv not including the header
-    
-
-
-
-
-
-
-
+        #count the total P&L
+        this_month_PnL = int(row[1])
+        total_PnL += this_month_PnL
