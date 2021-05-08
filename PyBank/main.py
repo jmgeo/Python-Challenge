@@ -10,8 +10,11 @@ with open(csvpath) as csvfile:
     csvheader = next(csvreader)
     print(f"CSV Header: {csvheader}")
 
-for Date in csvfile:
-    print (Date)
+    #for row in csvfile:
+        #print (row)
+
+    months = len(list(csvreader))
+    print (months)
 
 
 #dist = 0
