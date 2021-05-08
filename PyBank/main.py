@@ -69,6 +69,17 @@ print(f"Total Months: {total_months}")
 print(f"Total: ${total_PnL}")
 print(f"Average Change: {ave_PnL}")
 print(f"Greatest Increase in Profits: {high_month} (${max_change_PnL})")
-print(f"Greatest Decrease in Losses: {low_month} (${min_change_PnL}")
+print(f"Greatest Decrease in Losses: {low_month} (${min_change_PnL})")
 
+#export the results of the script into a text file
+
+analysis_file = os.path.join("Analysis", "analysis.txt")
+with open(analysis_file, "w") as outfile:
+    outfile.write("Financial Analysis\n")
+    outfile.write("___________________________________\n")
+    outfile.write(f"Total Months: {total_months}\n")
+    outfile.write(f"Total: ${total_PnL}\n")
+    outfile.write(f"Average Change: {ave_PnL}\n")
+    outfile.write(f"Greatest Increase in Profits: {high_month} (${max_change_PnL})\n")
+    outfile.write(f"Greatest Decrease in Losses: {low_month} (${min_change_PnL})\n")
 
