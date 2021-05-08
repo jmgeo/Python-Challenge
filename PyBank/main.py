@@ -54,4 +54,21 @@ with open(csvpath) as csvfile:
     max_change_PnL = max(PnL)
     min_change_PnL = min(PnL)
 
-    
+    #find the index of the maximum and minimum changes in values for the P&Ls for the dataset timeframe
+    max_month_index = PnL.index(max_change_PnL)
+    min_month_index = PnL.index(min_change_PnL)
+
+    #find the value for the highest and lowest performing months
+    high_month = months[max_month_index]
+    low_month = months[min_month_index]
+
+#print all this jazz to the gitbash terminal
+print("Financial Analysis")
+print("___________________________________")
+print(f"Total Months: {total_months}")
+print(f"Total: ${total_PnL}")
+print(f"Average Change: {ave_PnL}")
+print(f"Greatest Increase in Profits: {high_month} (${max_change_PnL})")
+print(f"Greatest Decrease in Losses: {low_month} (${min_change_PnL}")
+
+
