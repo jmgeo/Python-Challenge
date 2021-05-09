@@ -36,29 +36,17 @@ with open(csvpath, newline='') as csvfile:
     #time to calculate. Operation should return the percentage of votes for each candidate as requested.
     for item in vote_tally:
         winner = format(((item[0][1])*100/sum(candidate_count.values())), '.3f')
-        second = format(((item[0][1])*100/sum(candidate_count.values())), '.3f')
-        third = format(((item[0][1])*100/sum(candidate_count.values())), '.3f')
-        fourth = format(((item[0][1])*100/sum(candidate_count.values())), '.3f')
-    #calculate the sum and the average P&L over the dataset timeframe, as well as the max and min P&Ls
-    #sum_PnL = sum(PnL)
-    #ave_PnL = round(sum_PnL/(total_months -1),2)
-    #max_change_PnL = max(PnL)
-    #min_change_PnL = min(PnL)
-
-    #find the index of the maximum and minimum changes in values for the P&Ls for the dataset timeframe
-    #max_month_index = PnL.index(max_change_PnL)
-    #min_month_index = PnL.index(min_change_PnL)
-
-    #find the value for the highest and lowest performing months
-    #high_month = months[max_month_index]
-    #low_month = months[min_month_index]
+        second = format(((item[1][1])*100/sum(candidate_count.values())), '.3f')
+        third = format(((item[2][1])*100/sum(candidate_count.values())), '.3f')
+        fourth = format(((item[3][1])*100/sum(candidate_count.values())), '.3f')
 
 #print all this jazz to the gitbash terminal
-#print("Financial Analysis")
-#print("___________________________________")
-#print(f"Total Months: {total_months}")
-#print(f"Total: ${total_PnL}")
-#print(f"Average Change: {ave_PnL}")
+print("Election Results")
+print("___________________________________")
+print(f"Total Votes: {sum(candidate_count.values())}")
+print("___________________________________")
+print(f"{vote_tally[0][0][0]}: {winner}% ({vote_tally[0][0][1]})")
+
 #print(f"Greatest Increase in Profits: {high_month} (${max_change_PnL})")
 #print(f"Greatest Decrease in Losses: {low_month} (${min_change_PnL})")
 
