@@ -7,22 +7,17 @@ from collections import Counter
 #define needed variables to perform the homework
 #months = []
 #PnL = []
-
-#set the needed counts equal to zero to start
-#total_months = 0
-#total_PnL = 0
-#last_month_PnL = 0
-#this_month_PnL = 0
-#PnL_change = 0
+candidates = []
+votes_per_candidate = []
 
 #change the directory to the file location
-#csvpath = os.path.join("Resources", "budget_data.csv")
+csvpath = os.path.join("Resources", "election_data.csv")
 
 #open the csv file
-#with open(csvpath) as csvfile:
-    #csvreader = csv.reader(csvfile, delimiter=',')
-    #csvheader = next(csvreader)
-    #print(f"CSV Header: {csvheader}")
+with open(csvpath, newline='') as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=',')
+    csvheader = next(csvfile)
+    print(f"CSV Header: {csvheader}")
 
     #for row in csvreader:
         #count the total number of months
