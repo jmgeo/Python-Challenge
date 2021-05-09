@@ -46,6 +46,7 @@ print("___________________________________")
 print(f"Total Votes: {sum(candidate_count.values())}")
 print("___________________________________")
 print(f"{vote_tally[0][0][0]}: {winner}% ({vote_tally[0][0][1]})")
+print(f"{vote_tally[0][1][0]}: {second}% ({vote_tally[0][1][1]})")
 
 #print(f"Greatest Increase in Profits: {high_month} (${max_change_PnL})")
 #print(f"Greatest Decrease in Losses: {low_month} (${min_change_PnL})")
