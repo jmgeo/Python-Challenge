@@ -53,18 +53,23 @@ print("___________________________________")
 print(f"Winner: {vote_tally[0][0][0]}")
 print("___________________________________")
 
-#print(f"Greatest Increase in Profits: {high_month} (${max_change_PnL})")
-#print(f"Greatest Decrease in Losses: {low_month} (${min_change_PnL})")
-
 #export the results of the script into a text file
 
-#analysis_file = os.path.join("Analysis", "analysis.txt")
-#with open(analysis_file, "w") as outfile:
-    #outfile.write("Financial Analysis\n")
-    #outfile.write("___________________________________\n")
-    #outfile.write(f"Total Months: {total_months}\n")
-    #outfile.write(f"Total: ${total_PnL}\n")
-    #outfile.write(f"Average Change: {ave_PnL}\n")
-    #outfile.write(f"Greatest Increase in Profits: {high_month} (${max_change_PnL})\n")
-    #outfile.write(f"Greatest Decrease in Losses: {low_month} (${min_change_PnL})\n")
+analysis_file = os.path.join("Analysis", "analysis.txt")
+
+#pretty much the same setup as the PyBank output
+with open(analysis_file, "w") as outfile:
+    outfile.write("Election Results\n")
+    outfile.write("___________________________________\n")
+    outfile.write(f"Total Votes: {sum(candidate_count.values())}\n")
+    outfile.write("___________________________________\n")
+    outfile.write(f"{vote_tally[0][0][0]}: {winner}% ({vote_tally[0][0][1]})\n")
+    outfile.write(f"{vote_tally[0][1][0]}: {second}% ({vote_tally[0][1][1]})\n")
+    outfile.write(f"{vote_tally[0][2][0]}: {third}% ({vote_tally[0][2][1]})\n")
+    outfile.write(f"{vote_tally[0][3][0]}: {fourth}% ({vote_tally[0][3][1]})\n")
+    outfile.write("___________________________________\n")
+    outfile.write(f"Winner: {vote_tally[0][0][0]}\n")
+    outfile.write("___________________________________\n")
+    
+
 
