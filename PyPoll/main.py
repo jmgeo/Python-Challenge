@@ -1,6 +1,8 @@
 #import the dependencies
 import os
 import csv
+import collections
+from collections import Counter
 
 #define needed variables to perform the homework
 #months = []
