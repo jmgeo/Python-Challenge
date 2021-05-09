@@ -8,7 +8,7 @@ from collections import Counter
 #months = []
 #PnL = []
 candidates = []
-votes_per_candidate = []
+vote_tally = []
 
 #change the directory to the file location
 csvpath = os.path.join("Resources", "election_data.csv")
@@ -19,31 +19,20 @@ with open(csvpath, newline='') as csvfile:
     csvheader = next(csvfile)
     print(f"CSV Header: {csvheader}")
 
-    #for row in csvreader:
-        #count the total number of months
-        #total_months +=1
+    for row in csvreader:
+        #append the votes for each candidate to the appropriate row
+        candidates.append(row[2])
+    
+    #sort the list of candidates by ascending order
+    candidates_list = sorted(candidates)
 
-        #count the total P&L
-        #this_month_PnL = int(row[1])
-        #total_PnL += this_month_PnL
+    #rearrange the sorted list of candidates by the most prevalent result
+    arranged_list = candidates_list
 
-        #if (total_months ==1):
-            #make the last month P&L equal to the value of this month's P&L
-            #last_month_PnL = this_month_PnL
-            #continue
-
-        #else:
-            #calculate the P&L
-            #PnL_change = this_month_PnL - last_month_PnL
-
-            #append to the months
-            #months.append(row[0])
-
-            #append to P&L
-            #PnL.append(PnL_change)
-
-            #set the current month P&L to the previous and continue the loop
-            #last_month_PnL = this_month_PnL
+    #tally the votes for each candidate in the order of prevalanece and append it to the list
+    candidate_count = Counter(arranged_list)
+    vote_tally.append(candidate_count.most_common())
+        
     
     #calculate the sum and the average P&L over the dataset timeframe, as well as the max and min P&Ls
     #sum_PnL = sum(PnL)
