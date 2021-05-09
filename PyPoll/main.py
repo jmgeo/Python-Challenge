@@ -32,8 +32,13 @@ with open(csvpath, newline='') as csvfile:
     #tally the votes for each candidate in the order of prevalanece and append it to the list
     candidate_count = Counter(arranged_list)
     vote_tally.append(candidate_count.most_common())
-        
-    
+
+    #time to calculate. Operation should return the percentage of votes for each candidate as requested.
+    for item in vote_tally:
+        winner = format(((item[0][1])*100/sum(candidate_count.values())), '.3f')
+        second = format(((item[0][1])*100/sum(candidate_count.values())), '.3f')
+        third = format(((item[0][1])*100/sum(candidate_count.values())), '.3f')
+        fourth = format(((item[0][1])*100/sum(candidate_count.values())), '.3f')
     #calculate the sum and the average P&L over the dataset timeframe, as well as the max and min P&Ls
     #sum_PnL = sum(PnL)
     #ave_PnL = round(sum_PnL/(total_months -1),2)
